@@ -1,16 +1,48 @@
 .cartao {
-	display:inline-block;
+	display:block;
+	float:left;
 
 	border:1px outset gray;
 	border-radius: 5px;	
 	width: 15em;
+	
 
 	img {
 		max-width: 64px;
 		max-height: 64px;
+		float: left;
 	}
 	
-	.nome {
-		font-weight: bold;	
+	.informacao {
+		float: left;
+		
+		font-size: 0.8em;
+			font-family: serif;
+
+		.principal {
+			font-size: 1em;
+			font-weight: bold;	
+			font-family: sans-serif;
+		}
+
+		.secundaria {
+			font-style: italic;
+		}
+
+		.complementar {
+			
+			.telefone {
+				padding-left: 20px;
+				background-image: url("../images/telefone.gif");
+				background-repeat: no-repeat;
+			}
+			
+			.local {
+				padding-left: 20px;
+				background-image: url("../images/local.jpeg");
+				background-repeat: no-repeat;
+			}
+		}
 	}
+	
 }

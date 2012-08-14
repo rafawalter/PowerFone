@@ -1,24 +1,33 @@
 less.watch();
 
 function obterPessoas() {
-	return {pessoas:[
-		{
-			nome: "Fulano de Tal",
-			ramal: "1234",
-			local: "VL12 E34",
-			profile: "/profiles/1234",	
-		},{
-			nome: "Zé das Couves",
-			ramal: "4321",
-			local: "VL21 E43",
-			profile: "/profiles/4321",				
-		}
-	], };
+	var pessoas = [];
+
+	$('tr').each(function(index,element) {if (index != 0) pessoas.push(extrairPessoaDaLinha(element));});
+	console.log(pessoas);
+
+	return {pessoas:pessoas};
+};
+
+
+function extrairPessoaDaLinha(linha) {
+	var campos = $(['nome', 'ramal', 'local', 'alocacao', 'profile']);
+
+	var valores = $('td', linha).map(function(index,element){
+		return element.innerHTML;
+	});
+
+	var novaPessoa = {};	
+	campos.each(function(index,element) {
+		novaPessoa[element] = valores[index];
+	});
+	
+	return novaPessoa;
 };
 
 
 function renderPessoas(pessoas) {
-	var templatePessoas = '{{#pessoas}}<div class="cartao"><span><img src="./images/no_pic.jpeg"></span><span><div>{{nome}}</div><div>{{ramal}} - {{local}}</div></div>{{/pessoas}}';
+	var templatePessoas = '{{#pessoas}}<div class="cartao"><div><img src="./images/no_pic.jpeg"></div><div class="informacao"><div class="principal">{{nome}}</div><div class="secundaria">{{alocacao}}</div><div class="complementar"><div class="telefone">{{ramal}}</div> <div class="local">{{local}}</div></div></div>{{/pessoas}}';
 	return renderMoustache(templatePessoas, pessoas);
 };
 
