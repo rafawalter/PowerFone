@@ -4,12 +4,17 @@
 // @version			0.5
 //
 // @include         */cata*.htm*
+// @include         */listel.nsf/pesquisa*
+//
+// @require  http://code.jquery.com/jquery-1.8.0.min.js
+// @require  http://lesscss.googlecode.com/files/less-1.3.0.min.js
+// @require  https://raw.github.com/janl/mustache.js/master/mustache.js
 //
 // ==/UserScript==
 
-//alert('carregado!');
+alert('carregado!');
 
-less.watch();
+// less.watch();
 
 function obterPessoas() {
 	var pessoas = [];
@@ -17,7 +22,6 @@ function obterPessoas() {
 	jQuery('table table tr').each(function(index,element) {
 		if (index != 0) pessoas.push(extrairPessoaDaLinha(element));
 	});
-	console.log(pessoas);
 
 	return {pessoas:pessoas};
 };
@@ -42,7 +46,7 @@ function extrairPessoaDaLinha(linha) {
 function renderPessoas(container, pessoas) {
 	jQuery.get('pessoas.moustache', function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		$(container).html(htmlPessoas);
+		jQuery(container).html(htmlPessoas);
 	});
 };
 
@@ -52,7 +56,7 @@ function renderMoustache(template, jsonData) {
 };
 
 
-$(function() {
+jQuery(function() {
 	var pessoas = obterPessoas();
 	jQuery('table tr:nth-child(2)').after(jQuery('<tr/>')).after(jQuery('<td/>', {
 	    id: 'cartoes',
