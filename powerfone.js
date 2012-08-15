@@ -26,9 +26,12 @@ function extrairPessoaDaLinha(linha) {
 };
 
 
-function renderPessoas(pessoas) {
-	var templatePessoas = '{{#pessoas}}<div class="cartao"><div><img src="./images/no_pic.jpeg"></div><div class="informacao"><div class="principal">{{nome}}</div><div class="secundaria">{{alocacao}}</div><div class="complementar"><div class="telefone">{{ramal}}</div> <div class="local">{{local}}</div></div></div>{{/pessoas}}';
-	return renderMoustache(templatePessoas, pessoas);
+function renderPessoas(container, pessoas) {
+//	var templatePessoas = '<div>{{#pessoas}}<div class="cartao"><img src="./images/no_pic.jpeg"><div class="informacao"><div class="principal">{{nome}}</div><div class="secundaria">{{alocacao}}</div><div class="complementar"><div class="telefone">{{ramal}}</div> <div class="local">{{local}}</div></div><img src="./images/qrcode.png"></div>{{/pessoas}}</div>';
+	$.get('pessoas.moustache', function(templatePessoas) {
+		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
+		$(container).html(htmlPessoas);
+	});
 };
 
 
@@ -36,8 +39,9 @@ function renderMoustache(template, jsonData) {
 	return Mustache.render(template, jsonData);
 };
 
+
 $(function() {
 	var pessoas = obterPessoas();
-	var htmlCartoes = renderPessoas(pessoas);
-	$('h1').after(htmlCartoes);
+	$('h1').after('<div id="cartoes">aqui!</div>');
+	renderPessoas('#cartoes', pessoas);
 });
