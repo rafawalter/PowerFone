@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name            PowerFone
 // @description     Lista Telefônica Aumentada
+// @version			0.5
 //
 // @include         */cata*.htm*
 //
