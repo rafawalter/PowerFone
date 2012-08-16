@@ -7,14 +7,14 @@
 // @include         */listel.nsf/pesquisa*
 //
 // @require  http://code.jquery.com/jquery-1.8.0.min.js
-// @require  http://lesscss.googlecode.com/files/less-1.3.0.min.js
 // @require  https://raw.github.com/janl/mustache.js/master/mustache.js
 //
 // ==/UserScript==
 
-// alert('carregado!');
-
 // less.watch();
+
+jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="./css/powerFone.less">');
+jQuery('head').append('<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript">');
 
 function obterPessoas() {
 	var pessoas = [];
@@ -46,9 +46,6 @@ function extrairPessoaDaLinha(linha) {
 function renderPessoas(container, pessoas) {
 	jQuery.get('pessoas.moustache', function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		console.log(templatePessoas);
-		console.log(pessoas);
-		console.log(htmlPessoas);
 		jQuery(container).append(htmlPessoas);
 	});
 };
