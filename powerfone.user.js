@@ -12,7 +12,7 @@
 //
 // ==/UserScript==
 
-alert('carregado!');
+// alert('carregado!');
 
 // less.watch();
 
@@ -46,7 +46,10 @@ function extrairPessoaDaLinha(linha) {
 function renderPessoas(container, pessoas) {
 	jQuery.get('pessoas.moustache', function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		jQuery(container).html(htmlPessoas);
+		console.log(templatePessoas);
+		console.log(pessoas);
+		console.log(htmlPessoas);
+		jQuery(container).append(htmlPessoas);
 	});
 };
 
@@ -58,10 +61,6 @@ function renderMoustache(template, jsonData) {
 
 jQuery(function() {
 	var pessoas = obterPessoas();
-	jQuery('table tr:nth-child(2)').after(jQuery('<tr/>')).after(jQuery('<td/>', {
-	    id: 'cartoes',
-	    innerHTML: 'AQUI!',
-	    colspan: 3,
-    }));
+	jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
 	renderPessoas('#cartoes', pessoas);
 });
