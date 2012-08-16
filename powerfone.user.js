@@ -13,8 +13,10 @@
 
 // less.watch();
 
-jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="./css/powerFone.less">');
-jQuery('head').append('<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript">');
+var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
+
+jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
+//jQuery('head').append('<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript">');
 
 function obterPessoas() {
 	var pessoas = [];
@@ -44,7 +46,7 @@ function extrairPessoaDaLinha(linha) {
 
 
 function renderPessoas(container, pessoas) {
-	jQuery.get('pessoas.moustache', function(templatePessoas) {
+	jQuery.get('pessoas.mustache', function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
 		jQuery(container).append(htmlPessoas);
 	});
