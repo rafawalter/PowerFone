@@ -1,74 +1,161 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-	<META HTTP-EQUIV="expires" CONTENT="0">
-	<title>CataToon</title><meta http-equiv>
-	
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	
-	<!--		
-	<link rel="stylesheet/less" type="text/css" href="./css/powerFone.less">
-	<script src="./lib/less-1.3.0.min.js" type="text/javascript"></script>
-	
-	<script src="./lib/jquery-1.8.0.min.js" type="text/javascript"> </script>
-	<script src="./lib/mustache.js" type="text/javascript"></script>
-	
-	<script src="./powerfone.user.js"></script>
-	-->
-	
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <title>CataToon</title>
+    <meta http-equiv>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <!--
+     <link rel="stylesheet/less" type="text/css" href="./css/powerFone.less">
+     <script src="./lib/less-1.3.0.min.js" type="text/javascript"></script>
+
+     <script src="./lib/jquery-1.8.0.min.js" type="text/javascript"> </script>
+     <script src="./lib/mustache.js" type="text/javascript"></script>
+
+     <script src="./powerfone.user.js"></script>
+     -->
+
 </head>
 <body text="#000000" bgcolor="#E1E1E1" LINK="0000FF" VLINK="0000FF">
 
 <form onsubmit="PesquisarNome_onclick();return false
-return true;" method="post"  name="_Pesquisa">
-<table width="100%" border="1">
-<tr valign="top"><td width="100%" bgcolor="#000080" colspan="3"><div align="center"><b><font size="5" color="#FFFFFF" face="Verdana">CataToon</font></b></div></td></tr>
+return true;" method="post" name="_Pesquisa">
+    <table width="100%" border="1">
+        <tr valign="top">
+            <td width="100%" bgcolor="#000080" colspan="3">
+                <div align="center"><b><font size="5" color="#FFFFFF" face="Verdana">CataToon</font></b></div>
+            </td>
+        </tr>
 
-<tr valign="top"><td width="33%" bgcolor="#EFEFEF"><div align="center"><b><font face="Verdana">Pesquisa por partes do nome</font></b><br>
-<font face="Times New Roman">
-<input name="Nome1" value="" SIZE=10 MAXLENGTH=15 onkeypress="Nome_onkeypress(event)"></font><font face="Times New Roman">
-<input name="Nome2" value="" SIZE=10 MAXLENGTH=15 onkeypress="Nome_onkeypress(event)"></font> <font face="Times New Roman"><INPUT TYPE="button"NAME="PesquisarNome" VALUE="Pesquisar" ONCLICK="PesquisarNome_onclick()"></font></div></td><td width="33%" bgcolor="#EFEFEF"><div align="center"><b><font face="Verdana">Pesquisa por lotação</font></b><br>
-<font face="Times New Roman">
-<input name="%%Surrogate_Lotacao" type="hidden" value="1">
-<select name="Lotacao">
-<option>
-<option>Disney
-<option selected>Disney/Pixar
-<option>Hanna Barbera
-<option>Loony Toons
-</select>
-</font><font face="Times New Roman"><INPUT TYPE="button"NAME="PesquisarLotacao" VALUE="Pesquisar" ONCLICK="PesquisarLotacao_onclick()"></font></div><br>
-</td><td width="33%" bgcolor="#EFEFEF"><div align="center"><font size="2" face="Times New Roman">          </font><b><font face="Verdana">      Pesquisa por prédio/lotação      </font></b><br>
-<font face="Times New Roman">
-<input name="%%Surrogate_Predio" type="hidden" value="1">
-<select name="Predio" onchange = "javascript:carrega_cbo_lotacao_predio()">
-<option>Burbank
-<option selected>Emeryville
-<option>Studio City
-</select>
-</font> 
-<input name="%%Surrogate_AreaPredio" type="hidden" value="1">
-<select name="AreaPredio">
-<option value="_medimopb3d5nmsobi41nn11u6ds_">selecionar opção
-<option>Disney
-<option>Disney/Pixar
-<option>Hanna Barbera
-<option>Loony Toons
-</select>
-       <INPUT TYPE="button"NAME="PesquisarPredio" VALUE="Pesquisar" ONCLICK="PesquisarPredio_onclick()"></div></td></tr>
+        <tr valign="top">
+            <td width="33%" bgcolor="#EFEFEF">
+                <div align="center"><b><font face="Verdana">Pesquisa por partes do nome</font></b><br>
+                    <font face="Times New Roman">
+                        <input name="Nome1" value="" SIZE=10 MAXLENGTH=15
+                               onkeypress="Nome_onkeypress(event)"></font><font face="Times New Roman">
+                        <input name="Nome2" value="" SIZE=10 MAXLENGTH=15 onkeypress="Nome_onkeypress(event)"></font>
+                    <font face="Times New Roman"><INPUT TYPE="button" NAME="PesquisarNome" VALUE="Pesquisar"
+                                                        ONCLICK="PesquisarNome_onclick()"></font></div>
+            </td>
+            <td width="33%" bgcolor="#EFEFEF">
+                <div align="center"><b><font face="Verdana">Pesquisa por lotação</font></b><br>
+                    <font face="Times New Roman">
+                        <input name="%%Surrogate_Lotacao" type="hidden" value="1">
+                        <select name="Lotacao">
+                            <option>
+                            <option>Disney
+                            <option selected>Disney/Pixar
+                            <option>Hanna Barbera
+                            <option>Loony Toons
+                        </select>
+                    </font><font face="Times New Roman"><INPUT TYPE="button" NAME="PesquisarLotacao" VALUE="Pesquisar"
+                                                               ONCLICK="PesquisarLotacao_onclick()"></font></div>
+                <br>
+            </td>
+            <td width="33%" bgcolor="#EFEFEF">
+                <div align="center"><font size="2" face="Times New Roman"> </font><b><font face="Verdana"> Pesquisa por
+                    prédio/lotação </font></b><br>
+                    <font face="Times New Roman">
+                        <input name="%%Surrogate_Predio" type="hidden" value="1">
+                        <select name="Predio">
+                            <option>Burbank
+                            <option selected>Emeryville
+                            <option>Studio City
+                        </select>
+                    </font>
+                    <input name="%%Surrogate_AreaPredio" type="hidden" value="1">
+                    <select name="AreaPredio">
+                        <option value="_medimopb3d5nmsobi41nn11u6ds_">selecionar opção
+                        <option>Disney
+                        <option>Disney/Pixar
+                        <option>Hanna Barbera
+                        <option>Loony Toons
+                    </select>
+                    <INPUT TYPE="button" NAME="PesquisarPredio" VALUE="Pesquisar" ONCLICK="PesquisarPredio_onclick()">
+                </div>
+            </td>
+        </tr>
 
-<tr valign="top"><td width="100%" bgcolor="#FFFFFF" colspan="3"><div align="center"><b><font color="#ff0000" face="Verdana">
-<TABLE WIDTH=100% NOBORDER>
-	<TR><TH NOWRAP BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">NOME</FONT></B></TH> <TH NOWRAP width=8% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">RAMAIS</FONT></B></TH><TH NOWRAP width=6% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">MATRÍCULA</FONT></B></TH> <TH NOWRAP width=14% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">LOTAÇÃO</FONT></B></TH><TH NOWRAP width=6% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">USERID</FONT></B></TH> <TH NOWRAP width=24% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">FUNÇÃO EXECUTIVA</FONT></B></TH></TR> 
-	<TR VALIGN=top><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A HREF="catatoon/008022.htm">Buzz Lightyear</A></FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-BUZZ</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">00802-2</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Disney/Pixar/ToyStory</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">BUZZ</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Space Ranger</FONT></TD></TR> 
-	<TR VALIGN=top><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A HREF="catatoon/000001.htm">Woody</A></FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-WUDY</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">00000-1</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Disney/Pixar/ToyStory</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">WOODY</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Sheriff</FONT></TD></TR> 
-	<TR VALIGN=top><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A HREF="catatoon/735513.htm">Jessie</A></FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-JESS</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">73551-3</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Disney/Pixar/ToyStory</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">JESSE</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"></FONT></TD></TR> 
-	<TR VALIGN=top><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A HREF="catatoon/80115373.htm">Bullseye</A></FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-BULL</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">8011537-3</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Disney/Pixar/ToyStory</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">ALVO</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"></FONT></TD></TR> 
-	<TR VALIGN=top><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A HREF="catatoon/02069.htm">Zurg</A></FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-ZURG</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">0206-9</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Disney/Pixar/ToyStory</FONT></TD><TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">ZURG</FONT></TD> <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Emperor</FONT></TD></TR> 
-</TABLE>                                                                                                                                                                   </font></b>                                                                                                                                                                                                                                                                                                                                                                                                              <b><font color="#ff0000" face="Verdana">                                                                                                                                                                                                       </font></b><b><font color="#ff0000" face="Verdana"></font></b><b><font color="#ff0000" face="Verdana"></font></b><b><font color="#ff0000" face="Verdana"></font></b><b><font color="#ff0000" face="Verdana"></font></b></div></td></tr>
-</table>
-<font size="2" face="Courier New"><!--]</font>[--><br>
- 
-<input name="AreaPredio1" value="" type="hidden"></form>
+        <tr valign="top">
+            <td width="100%" bgcolor="#FFFFFF" colspan="3">
+                <div align="center"><b><font color="#ff0000" face="Verdana">
+                    <TABLE WIDTH=100% NOBORDER>
+                        <TR>
+                            <TH NOWRAP BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">NOME</FONT></B></TH>
+                            <TH NOWRAP width=8% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1
+                                                                          COLOR="ffffff">RAMAIS</FONT></B></TH>
+                            <TH NOWRAP width=6% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1
+                                                                          COLOR="ffffff">MATRÍCULA</FONT></B></TH>
+                            <TH NOWRAP width=14% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1
+                                                                           COLOR="ffffff">LOTAÇÃO</FONT></B></TH>
+                            <TH NOWRAP width=6% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1
+                                                                          COLOR="ffffff">USERID</FONT></B></TH>
+                            <TH NOWRAP width=24% BGCOLOR="000080"><B><FONT FACE=VERDANA SIZE=1 COLOR="ffffff">FUNÇÃO
+                                EXECUTIVA</FONT></B></TH>
+                        </TR>
+                        <TR VALIGN=top>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A
+                                    HREF="catatoon/008022.htm">Buzz Lightyear</A></FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-BUZZ</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">00802-2</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1
+                                                              COLOR="000000">Disney/Pixar/ToyStory</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">BUZZ</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Space Ranger</FONT>
+                            </TD>
+                        </TR>
+                        <TR VALIGN=top>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A
+                                    HREF="catatoon/000001.htm">Woody</A></FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-WUDY</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">00000-1</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1
+                                                              COLOR="000000">Disney/Pixar/ToyStory</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">WOODY</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Sheriff</FONT></TD>
+                        </TR>
+                        <TR VALIGN=top>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A
+                                    HREF="catatoon/735513.htm">Jessie</A></FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-JESS</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">73551-3</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1
+                                                              COLOR="000000">Disney/Pixar/ToyStory</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">JESSE</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"></FONT></TD>
+                        </TR>
+                        <TR VALIGN=top>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A
+                                    HREF="catatoon/80115373.htm">Bullseye</A></FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-BULL</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">8011537-3</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1
+                                                              COLOR="000000">Disney/Pixar/ToyStory</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">ALVO</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"></FONT></TD>
+                        </TR>
+                        <TR VALIGN=top>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000"><A
+                                    HREF="catatoon/02069.htm">Zurg</A></FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">4321-ZURG</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">0206-9</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1
+                                                              COLOR="000000">Disney/Pixar/ToyStory</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">ZURG</FONT></TD>
+                            <TD NOWRAP BGCOLOR="efefef"><FONT FACE=VERDANA SIZE=1 COLOR="000000">Emperor</FONT></TD>
+                        </TR>
+                    </TABLE>
+                </font></b> <b><font color="#ff0000" face="Verdana"> </font></b><b><font color="#ff0000"
+                                                                                         face="Verdana"></font></b><b><font
+                        color="#ff0000" face="Verdana"></font></b><b><font color="#ff0000" face="Verdana"></font></b><b><font
+                        color="#ff0000" face="Verdana"></font></b></div>
+            </td>
+        </tr>
+    </table>
+    <font size="2" face="Courier New"><!--]</font>[--><br>
+
+        <input name="AreaPredio1" value="" type="hidden"></form>
 </body>
 </html>

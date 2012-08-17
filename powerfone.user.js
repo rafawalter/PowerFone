@@ -16,7 +16,31 @@
 var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
-//jQuery('head').append('<script src="http://lesscss.googlecode.com/files/less-1.3.0.min.js" type="text/javascript">');
+
+
+jQuery('table table tr a[href]').each(function (index, element) {
+    console.log(element);
+    var url = $(element).attr('href');
+    jQuery.get(url, function(data) {
+
+        jQuery(element).qtip({
+            content: data,
+            style: {
+                tip: true,
+                border: {
+                    width: 0,
+                    radius: 4
+                },
+                name: 'light',
+                width: 570
+            }
+        });
+    });
+});
+
+
+$('table table tr a[href]')
+jQuery('#result').load('ajax/test.html');
 
 function obterPessoas() {
 	var pessoas = [];
