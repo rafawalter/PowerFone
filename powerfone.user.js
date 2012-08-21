@@ -13,6 +13,7 @@
 
 // less.watch();
 
+
 var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
@@ -70,7 +71,9 @@ function extrairPessoaDaLinha(linha) {
 
 
 function renderPessoas(container, pessoas) {
-	jQuery.get('pessoas.mustache', function(templatePessoas) {
+	var templateUrl = chrome.extension.getURL("pessoas.mustache");
+
+	jQuery.get(templateUrl, function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
 		jQuery(container).append(htmlPessoas);
 	});
