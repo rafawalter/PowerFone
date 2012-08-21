@@ -32,7 +32,9 @@
 	"web_accessible_resources": [
 		"images/telefone.png",
 		"images/local.png",
-		"css/powerFone.less"
+		"images/qrcode.png",
+		"images/no_pic.jpg",
+		"css/powerFone.less",
 		"pessoas.mustache"
 	]
 }

@@ -73,9 +73,13 @@ function extrairPessoaDaLinha(linha) {
 function renderPessoas(container, pessoas) {
 	var templateUrl = chrome.extension.getURL("pessoas.mustache");
 
+	var novaUrl = chrome.extension.getURL("images/no_pic.jpg");
+
+	
 	jQuery.get(templateUrl, function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		jQuery(container).append(htmlPessoas);
+		var htmlAjustado = htmlPessoas.replace( /<img src=".*?">/g, '<img src="'+novaUrl+'">' );
+		jQuery(container).append(htmlAjustado);
 	});
 };
 
