@@ -1,3 +1,6 @@
+@images-url: `chrome.extension.getURL("images")`;
+
+
 table {
 	border-width: 0px;
 }
@@ -7,7 +10,7 @@ table {
 
 	border:1px outset gray;
 	border-radius: 5px;	
-	width: 300px;
+	width: 350px;
 	
 	background-color: #efefef;
 	
@@ -39,16 +42,28 @@ table {
 			
 			.telefone {
 				padding-left: 20px;
-				background-image: url("../images/telefone.png");
+				//background-image: url(@images-url + "/telefone.png");
 				background-repeat: no-repeat;
 			}
 			
 			.local {
 				padding-left: 20px;
-				background-image: url("../images/local.png");
+				//background-image: url(@images-url + "/local.png");
 				background-repeat: no-repeat;
 			}
 		}
 	}
 	
+	.qrcode {
+		display:inline-block;
+		padding: 5px;
+		
+		canvas {
+			max-width: 75px;
+		}
+	}
+	
+	.tooltip {
+		position: absolute;
+	}
 }

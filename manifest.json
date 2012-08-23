@@ -15,12 +15,13 @@
 		],
 		"include_globs": [
 			"*/cata*.htm*",
-			"*/listel.nsf/pesquisa*"
+			"*/listel.nsf/*"
 		],
 		"js": [
 			"./lib/jquery-1.8.0.min.js",
 			"./lib/jquery-ui-1.8.23.min.js",
             "./lib/jquery.qtip-1.0.0-rc3.min.js",
+            "./lib/jquery.qrcode.min.js",
 
 			"./lib/mustache.js",
 

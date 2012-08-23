@@ -20,7 +20,6 @@ jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+power
 
 
 jQuery('table table tr a[href]').each(function (index, element) {
-    console.log(element);
     var url = $(element).attr('href');
     jQuery.get(url, function(data) {
 
@@ -61,7 +60,7 @@ function obterPessoa() {
 
 
 function extrairPessoaDaCelula(celula) {
-	var campos = jQuery(['nome','matrícula', 'userid', 'lotacao', 'cargo', 'empresa', 'local', 'ramais']);
+	var campos = jQuery(['nome','matricula', 'userid', 'lotacao', 'cargo', 'funcao', 'empresa', 'local', 'ramal']);
 
     var valores = jQuery('b', celula).map(function(index,element){
         return jQuery(element).text();
@@ -77,7 +76,7 @@ function extrairPessoaDaCelula(celula) {
 
 
 function extrairPessoaDaLinha(linha) {
-    var campos = jQuery(['nome', 'ramais', 'local', 'lotação', 'profile']);
+    var campos = jQuery(['nome', 'ramal', 'matricula', 'lotacao', 'userid', 'funcao']);
 
 	var valores = jQuery('td', linha).map(function(index,element){
 		return jQuery(element).text();
@@ -96,11 +95,9 @@ function renderPessoas(container, pessoas) {
 	var templateUrl = chrome.extension.getURL("pessoas.mustache");
 
 	var baseUrlInterna = chrome.extension.getURL("images");
-
 	
 	jQuery.get(templateUrl, function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-        console.log(pessoas, htmlPessoas);
 		var htmlAjustado = htmlPessoas.replace( /<img src="(.*?)">/g, '<img src="'+baseUrlInterna+'/no_pic.jpg">' );
 		jQuery(container).append(htmlAjustado);
 	});
@@ -108,6 +105,7 @@ function renderPessoas(container, pessoas) {
 
 
 function renderMoustache(template, jsonData) {
+    console.log(jsonData);
 	return Mustache.render(template, jsonData);
 };
 
@@ -116,7 +114,6 @@ jQuery(function() {
 	var pessoas = obterPessoas();
     if (pessoas.pessoas.length == 0) {
         var pessoa = obterPessoa();
-        console.log(pessoa);
         pessoas.pessoas.push(pessoa);
     };
 	jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
