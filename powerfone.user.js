@@ -13,8 +13,11 @@
 
 // less.watch();
 
-
+var EXTENSION_BASE_URL = chrome.extension.getURL('');
+var IMAGE_BASE_URL = chrome.extension.getURL("images");
 var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
+const NO_PIC = IMAGE_BASE_URL + '/no_pic.jpg';
+
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
@@ -54,10 +57,17 @@ function obterPessoas() {
 
 
 function obterPessoa() {
-    var celula = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(2)");
-    return extrairPessoaDaCelula(celula);
+    var celulas = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(2)");
+    var celulaInformacoes = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(2)");
+    var celulaFoto = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(1)");
+    var pessoa = extrairPessoaDaCelula(celulaInformacoes);
+    pessoa.foto = extrairFotoDaCelula(celulaFoto);
+    return pessoa;
 };
 
+function extrairFotoDaCelula(celula) {
+    return jQuery('img', celula).attr('src');
+};
 
 function extrairPessoaDaCelula(celula) {
 	var campos = jQuery(['nome','matricula', 'userid', 'lotacao', 'cargo', 'funcao', 'empresa', 'local', 'ramal']);
@@ -67,6 +77,7 @@ function extrairPessoaDaCelula(celula) {
     });
 
     var novaPessoa = {};
+    novaPessoa.foto = NO_PIC;
     campos.each(function(index,element) {
         novaPessoa[element] = valores[index];
     });
@@ -82,8 +93,10 @@ function extrairPessoaDaLinha(linha) {
 		return jQuery(element).text();
 	});
 
-	var novaPessoa = {};	
-	campos.each(function(index,element) {
+	var novaPessoa = {};
+    novaPessoa.foto = NO_PIC;
+
+    campos.each(function(index,element) {
 		novaPessoa[element] = valores[index];
 	});
 	
@@ -92,20 +105,17 @@ function extrairPessoaDaLinha(linha) {
 
 
 function renderPessoas(container, pessoas) {
+
 	var templateUrl = chrome.extension.getURL("pessoas.mustache");
 
-	var baseUrlInterna = chrome.extension.getURL("images");
-	
 	jQuery.get(templateUrl, function(templatePessoas) {
 		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		var htmlAjustado = htmlPessoas.replace( /<img src="(.*?)">/g, '<img src="'+baseUrlInterna+'/no_pic.jpg">' );
-		jQuery(container).append(htmlAjustado);
+		jQuery(container).append(htmlPessoas);
 	});
 };
 
 
 function renderMoustache(template, jsonData) {
-    console.log(jsonData);
 	return Mustache.render(template, jsonData);
 };
 

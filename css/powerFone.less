@@ -1,4 +1,5 @@
 @images-url: `chrome.extension.getURL("images")`;
+@max-image-height: 75px;
 
 
 table {
@@ -17,8 +18,8 @@ table {
 
 	img {
 		display:inline-block;
-		max-width: 64px;
-		max-height: 64px;
+		max-width: @max-image-height;
+		max-height: @max-image-height;
 	}
 	
 	.informacao {
@@ -59,7 +60,7 @@ table {
 		padding: 5px;
 		
 		canvas {
-			max-width: 75px;
+			max-width: @max-image-height;
 		}
 	}
 	

@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b7fa47e-5cb2-4e79-9894-8d9223e26ac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catatoon/008022.htm" afterPath="$PROJECT_DIR$/catatoon/008022.htm" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/catatoon.htm" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/simpleServer.sh" afterPath="$PROJECT_DIR$/startServer.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catatoon/008022.jpg" afterPath="$PROJECT_DIR$/catatoon/008022.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/powerFone.less" afterPath="$PROJECT_DIR$/css/powerFone.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pessoas.mustache" afterPath="$PROJECT_DIR$/pessoas.mustache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfone.user.js" afterPath="$PROJECT_DIR$/powerfone.user.js" />
     </list>
@@ -29,16 +34,34 @@
       <file leaf-file-name="manifest.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/manifest.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="49" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
+            <state line="17" column="20" selection-start="330" selection-end="330" vertical-scroll-proportion="-4.6363635">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="powerfone.user.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="powerfone.user.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/powerfone.user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="102" selection-start="1597" selection-end="1603" vertical-scroll-proportion="0.34108528">
+            <state line="96" column="28" selection-start="2718" selection-end="2718" vertical-scroll-proportion="-30.576923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="catatoon.htm" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/catatoon/catatoon.htm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="130" column="42" selection-start="8750" selection-end="8750" vertical-scroll-proportion="2.6">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startServer.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/startServer.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -47,7 +70,16 @@
       <file leaf-file-name="pessoas.mustache" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pessoas.mustache">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="47" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
+            <state line="3" column="24" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="powerFone.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/powerFone.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="62" column="40" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -75,11 +107,14 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/catatoon.htm" />
-        <option value="$PROJECT_DIR$/pessoas.mustache" />
         <option value="$PROJECT_DIR$/catatoon/008022.htm" />
+        <option value="$PROJECT_DIR$/pessoas.mustache" />
+        <option value="$PROJECT_DIR$/css/powerFone.less" />
+        <option value="$PROJECT_DIR$/manifest.json" />
         <option value="$PROJECT_DIR$/powerfone.user.js" />
+        <option value="$PROJECT_DIR$/catatoon/catatoon.htm" />
+        <option value="$PROJECT_DIR$/simpleServer.sh" />
       </list>
     </option>
   </component>
@@ -113,16 +148,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -151,8 +176,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerFone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerFone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerFone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PowerFone" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="catatoon" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -162,11 +225,11 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="JavaScript Debug.catatoon.htm">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Local">
@@ -221,7 +284,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14820042" sideWeight="0.5555556" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17219478" sideWeight="0.5555556" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -292,20 +355,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/catatoon.htm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="95" selection-start="3368" selection-end="3368" vertical-scroll-proportion="0.02">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="49" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/catatoon/008022.htm">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="36" selection-start="99" selection-end="99" vertical-scroll-proportion="-0.625">
@@ -313,16 +362,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/powerFone.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="40" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pessoas.mustache">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="47" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0">
+        <state line="3" column="24" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="20" selection-start="330" selection-end="330" vertical-scroll-proportion="-4.6363635">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/powerfone.user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="102" selection-start="1597" selection-end="1603" vertical-scroll-proportion="0.34108528">
+        <state line="96" column="28" selection-start="2718" selection-end="2718" vertical-scroll-proportion="-30.576923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/startServer.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/catatoon/catatoon.htm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="42" selection-start="8750" selection-end="8750" vertical-scroll-proportion="2.6">
           <folding />
         </state>
       </provider>

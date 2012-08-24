@@ -9,12 +9,13 @@
 		"128": "powerfone128.png"
 	},
 	"content_scripts": [{
-		"matches": [
+        "matches": [
 			"http://*/*",
-			"file://*/*"
+			"file:///*/*"
 		],
+
 		"include_globs": [
-			"*/cata*.htm*",
+			"*/cata*",
 			"*/listel.nsf/*"
 		],
 		"js": [
