@@ -13,7 +13,6 @@
 
 // less.watch();
 
-var EXTENSION_BASE_URL = chrome.extension.getURL('');
 var IMAGE_BASE_URL = chrome.extension.getURL("images");
 var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 const NO_PIC = IMAGE_BASE_URL + '/no_pic.jpg';
@@ -58,32 +57,17 @@ function extrairPessoaDaPerfil(htmlDoPerfil) {
 };
 
 
-function obterPessoas() {
-	var pessoas = [];
-
-	jQuery('table table tr').each(function(index,element) {
-		if (index != 0) pessoas.push(extrairPessoaDaLinha(element));
-	});
-
-	return {pessoas:pessoas};
-};
-
-
-function obterPessoa() {
-    var celulas = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(2)");
-    var celulaInformacoes = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(2)");
-    var celulaFoto = jQuery("form[name='_Pessoa'] > table > tbody > tr:nth-child(3) > td:nth-child(1)");
-    var pessoa = extrairPessoaDaCelula(celulaInformacoes);
-    pessoa.foto = extrairFotoDaCelula(celulaFoto);
-    return pessoa;
-};
-
 function extrairFotoDaCelula(celula) {
     return jQuery('img', celula).attr('src');
 };
 
+
 function extrairPessoaDaCelula(celula) {
-	var campos = jQuery(['nome','matricula', 'userid', 'lotacao', 'cargo', 'funcao', 'empresa', 'local', 'ramal']);
+//	var campos = jQuery(['nome','matricula', 'userid', 'lotacao', 'cargo', 'funcao', 'empresa', 'local', 'ramal']);
+    var campos = jQuery('font[color="#0000ff"]', celula).map(function(index,element){
+        return jQuery(element).text().toLowerCase();
+    });
+    console.log(campos);
 
     var valores = jQuery('b', celula).map(function(index,element){
         return jQuery(element).text();
@@ -99,26 +83,10 @@ function extrairPessoaDaCelula(celula) {
 };
 
 
-function extrairPessoaDaLinha(linha) {
-    var campos = jQuery(['nome', 'ramal', 'matricula', 'lotacao', 'userid', 'funcao']);
-
-	var valores = jQuery('td', linha).map(function(index,element){
-		return jQuery(element).text();
-	});
-
-	var novaPessoa = {};
-    novaPessoa.foto = NO_PIC;
-
-    campos.each(function(index,element) {
-		novaPessoa[element] = valores[index];
-	});
-	
-	return novaPessoa;
-};
-
-
 function renderPessoa(container, pessoa) {
     var templateUrl = chrome.extension.getURL("pessoa.mustache");
+
+    console.log(pessoa);
 
     jQuery.get(templateUrl, function(template) {
         var html = renderMoustache(template, pessoa);
@@ -128,18 +96,6 @@ function renderPessoa(container, pessoa) {
 };
 
 
-function renderPessoas(container, pessoas) {
-
-	var templateUrl = chrome.extension.getURL("pessoas.mustache");
-
-	jQuery.get(templateUrl, function(templatePessoas) {
-		var htmlPessoas = renderMoustache(templatePessoas, pessoas);
-		jQuery(container).append(htmlPessoas);
-	});
-};
-
-
 function renderMoustache(template, jsonData) {
 	return Mustache.render(template, jsonData);
 };
-

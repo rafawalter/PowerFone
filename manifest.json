@@ -1,6 +1,6 @@
 {
 	"name": "PowerFone",
-	"version": "0.5",
+	"version": "0.6",
 	"manifest_version": 2,
 	"description": " Lista Telefônica Aumentada",
   	"icons": {
@@ -37,7 +37,6 @@
 		"images/qrcode.png",
 		"images/no_pic.jpg",
 		"css/powerFone.less",
-		"pessoas.mustache",
 		"pessoa.mustache"
 	]
 }
