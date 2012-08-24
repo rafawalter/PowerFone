@@ -21,8 +21,10 @@ const NO_PIC = IMAGE_BASE_URL + '/no_pic.jpg';
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
+jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
 
 jQuery('table table tr a[href]').each(function (index, element) {
+
     var url = $(element).attr('href');
     jQuery.get(url, function(data) {
 
@@ -38,12 +40,23 @@ jQuery('table table tr a[href]').each(function (index, element) {
                 width: 570
             }
         });
+
+        var novaPessoa = extrairPessoaDaPerfil(data);
+        renderPessoa('#cartoes', novaPessoa);
     });
+
 });
 
 
-$('table table tr a[href]')
-jQuery('#result').load('ajax/test.html');
+function extrairPessoaDaPerfil(htmlDoPerfil) {
+    var celulas = jQuery(htmlDoPerfil, "form[name='_Pessoa'] > table > tbody > tr:nth-child(3)");
+    var celulaInformacoes = jQuery("td:nth-child(2)", celulas);
+    var celulaFoto = jQuery("td:nth-child(1)", celulas);
+    var pessoa = extrairPessoaDaCelula(celulaInformacoes);
+    pessoa.foto = extrairFotoDaCelula(celulaFoto);
+    return pessoa;
+};
+
 
 function obterPessoas() {
 	var pessoas = [];
@@ -104,6 +117,17 @@ function extrairPessoaDaLinha(linha) {
 };
 
 
+function renderPessoa(container, pessoa) {
+    var templateUrl = chrome.extension.getURL("pessoa.mustache");
+
+    jQuery.get(templateUrl, function(template) {
+        var html = renderMoustache(template, pessoa);
+        jQuery(container).append(html);
+    });
+
+};
+
+
 function renderPessoas(container, pessoas) {
 
 	var templateUrl = chrome.extension.getURL("pessoas.mustache");
@@ -119,13 +143,3 @@ function renderMoustache(template, jsonData) {
 	return Mustache.render(template, jsonData);
 };
 
-
-jQuery(function() {
-	var pessoas = obterPessoas();
-    if (pessoas.pessoas.length == 0) {
-        var pessoa = obterPessoa();
-        pessoas.pessoas.push(pessoa);
-    };
-	jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
-	renderPessoas('#cartoes', pessoas);
-});

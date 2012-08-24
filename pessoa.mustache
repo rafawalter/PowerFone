@@ -1,0 +1,18 @@
+<div class="cartao" id="{{matricula}}">
+    <img src="{{foto}}">
+    <div class="informacao">
+        <div class="principal">{{nome}}</div>
+        <div class="secundaria">{{lotacao}}</div>
+        <div class="complementar">
+            <div class="telefone">{{ramal}}</div>
+            <div class="local">{{local}}</div>
+        </div>
+    </div>
+    <div class="qrcode"></div>
+    <script type="text/javascript">
+        console.log('QRCode');
+        jQuery('#{{matricula}} .qrcode').each( function(index,element) {
+            jQuery(element).qrcode("{{nome}} {{lotacao}} {{ramal}} {{local}}");
+        });
+    </script>
+</div>

@@ -37,6 +37,7 @@
 		"images/qrcode.png",
 		"images/no_pic.jpg",
 		"css/powerFone.less",
-		"pessoas.mustache"
+		"pessoas.mustache",
+		"pessoa.mustache"
 	]
 }
