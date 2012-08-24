@@ -22,6 +22,15 @@ jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+power
 
 jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
 
+
+
+function fotoNaoEncontrada(element) {
+	alert('123');
+	jQuery(element).attr('src', NO_PIC);
+};
+
+
+
 jQuery('table table tr a[href]').each(function (index, element) {
 
     var url = $(element).attr('href');

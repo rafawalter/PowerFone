@@ -1,5 +1,12 @@
+<script type="text/javascript">
+	function fotoNaoEncontrada(element) {
+		alert('123');
+		jQuery(element).attr('src', NO_PIC);
+	};
+</script>
+
 <div class="cartao" id="{{matrícula}}">
-    <img src="{{foto}}">
+    <img src="{{foto}}" onerror="fotoNaoEncontrada(this);alert('abc');">
     <div class="informacao">
         <div class="principal">{{nome}}</div>
         <div class="secundaria">{{lotação}}</div>
@@ -8,9 +15,8 @@
             <div class="local">{{local/andar/sala}}</div>
         </div>
     </div>
-    <div class="qrcode"></div>
+    <div class="qrcode1"></div>
     <script type="text/javascript">
-        console.log('QRCode');
         jQuery('#{{matrícula}} .qrcode').each( function(index,element) {
             jQuery(element).qrcode("{{nome}} {{lotação}} {{ramais}} {{local/andar/sala}}");
         });
