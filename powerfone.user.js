@@ -15,7 +15,7 @@
 
 var IMAGE_BASE_URL = chrome.extension.getURL("images");
 var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
-const NO_PIC = IMAGE_BASE_URL + '/no_pic.jpg';
+const NO_PIC = IMAGE_BASE_URL + '/no_pic.png';
 
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
@@ -25,7 +25,7 @@ jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="ca
 
 
 function fotoNaoEncontrada(element) {
-	alert('123');
+	alert('fNE powerfone.user.js');
 	jQuery(element).attr('src', NO_PIC);
 };
 
@@ -62,6 +62,7 @@ function extrairPessoaDaPerfil(htmlDoPerfil) {
     var celulaFoto = jQuery("td:nth-child(1)", celulas);
     var pessoa = extrairPessoaDaCelula(celulaInformacoes);
     pessoa.foto = extrairFotoDaCelula(celulaFoto);
+	pessoa.semFoto = fotoNaoEncontrada;
     return pessoa;
 };
 
@@ -72,11 +73,9 @@ function extrairFotoDaCelula(celula) {
 
 
 function extrairPessoaDaCelula(celula) {
-//	var campos = jQuery(['nome','matricula', 'userid', 'lotacao', 'cargo', 'funcao', 'empresa', 'local', 'ramal']);
     var campos = jQuery('font[color="#0000ff"]', celula).map(function(index,element){
         return jQuery(element).text().toLowerCase();
     });
-    console.log(campos);
 
     var valores = jQuery('b', celula).map(function(index,element){
         return jQuery(element).text();
@@ -94,8 +93,6 @@ function extrairPessoaDaCelula(celula) {
 
 function renderPessoa(container, pessoa) {
     var templateUrl = chrome.extension.getURL("pessoa.mustache");
-
-    console.log(pessoa);
 
     jQuery.get(templateUrl, function(template) {
         var html = renderMoustache(template, pessoa);
