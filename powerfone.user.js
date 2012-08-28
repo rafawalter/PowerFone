@@ -26,6 +26,8 @@ jQuery('#textoDaBusca').keyup( function(event) {
     benchmark( mostrarApenasCartoesComTexto, event.target.value);
 });
 
+jQuery('#textoDaBusca').focus();
+
 
 function benchmark( funcao, parametros ) {
     var inicio = Date.now();
