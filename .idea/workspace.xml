@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b7fa47e-5cb2-4e79-9894-8d9223e26ac2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catatoon/80115373.htm" afterPath="$PROJECT_DIR$/catatoon/80115373.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/catatoon/catatoon.htm" afterPath="$PROJECT_DIR$/catatoon/catatoon.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/powerFone.less" afterPath="$PROJECT_DIR$/css/powerFone.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/powerfone.user.js" afterPath="$PROJECT_DIR$/powerfone.user.js" />
     </list>
     <ignored path="PowerFone.iws" />
@@ -28,19 +24,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="powerfone.user.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="powerfone.user.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/powerfone.user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="26" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.0">
+            <state line="33" column="27" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.43363994">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="powerFone.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="powerFone.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/powerFone.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="0.58414465">
+            <state line="47" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="-7.6363635">
               <folding />
             </state>
           </provider>
@@ -70,8 +66,8 @@
         <option value="$PROJECT_DIR$/pessoa.mustache" />
         <option value="$PROJECT_DIR$/catatoon/catatoon.htm" />
         <option value="$PROJECT_DIR$/catatoon/80115373.htm" />
-        <option value="$PROJECT_DIR$/powerfone.user.js" />
         <option value="$PROJECT_DIR$/css/powerFone.less" />
+        <option value="$PROJECT_DIR$/powerfone.user.js" />
       </list>
     </option>
   </component>
@@ -366,16 +362,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/powerfone.user.js">
+    <entry file="file://$PROJECT_DIR$/css/powerFone.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="26" selection-start="1295" selection-end="1295" vertical-scroll-proportion="0.0">
+        <state line="47" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="-7.6363635">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/powerFone.less">
+    <entry file="file://$PROJECT_DIR$/powerfone.user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="670" selection-end="670" vertical-scroll-proportion="0.58414465">
+        <state line="33" column="27" selection-start="1096" selection-end="1096" vertical-scroll-proportion="0.43363994">
           <folding />
         </state>
       </provider>

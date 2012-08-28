@@ -23,8 +23,17 @@ jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+power
 jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="busca_cartoes""><input type="text" id="textoDaBusca"></td></tr><tr><td colspan=6 id="cartoes"></td></tr>');
 
 jQuery('#textoDaBusca').keyup( function(event) {
-    mostrarApenasCartoesComTexto(event.target.value);
+    benchmark( mostrarApenasCartoesComTexto, event.target.value);
 });
+
+
+function benchmark( funcao, parametros ) {
+    var inicio = Date.now();
+    funcao(parametros);
+    var fim = Date.now();
+    console.log(funcao.name, fim - inicio, 'ms');
+};
+
 
 function mostrarApenasCartoesComTexto() {
     var textoDaBusca = event.target.value.toLowerCase();
@@ -38,6 +47,8 @@ function mostrarApenasCartoesComTexto() {
         };
     });
 };
+
+
 
 function fotoNaoEncontrada(element) {
 	alert('fNE powerfone.user.js');
