@@ -20,9 +20,24 @@ const NO_PIC = IMAGE_BASE_URL + '/no_pic.png';
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
-jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="cartoes"></td></tr>');
+jQuery('form > table > tbody > tr:nth-child(2)').after('<tr><td colspan=6 id="busca_cartoes""><input type="text" id="textoDaBusca"></td></tr><tr><td colspan=6 id="cartoes"></td></tr>');
 
+jQuery('#textoDaBusca').keyup( function(event) {
+    mostrarApenasCartoesComTexto(event.target.value);
+});
 
+function mostrarApenasCartoesComTexto() {
+    var textoDaBusca = event.target.value.toLowerCase();
+    jQuery('.cartao').each(function(index, elemento) {
+        var cartao = jQuery(elemento);
+        var texto = cartao.text().toLowerCase();
+        if (texto.indexOf(textoDaBusca) != -1) {
+            cartao.show();
+        } else {
+            cartao.hide();
+        };
+    });
+};
 
 function fotoNaoEncontrada(element) {
 	alert('fNE powerfone.user.js');
