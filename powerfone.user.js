@@ -120,16 +120,30 @@ function extrairPessoaDaCelula(celula) {
 
 
 function renderPessoa(container, pessoa) {
-    var templateUrl = chrome.extension.getURL("pessoa.mustache");
-
-    jQuery.get(templateUrl, function(template) {
+    var moustacheTemplateUrl = chrome.extension.getURL("pessoa.mustache");
+    jQuery.get(moustacheTemplateUrl, function(template) {
         var html = renderMoustache(template, pessoa);
         jQuery(container).append(html);
     });
 
+    /*
+    var jadeTemplateUrl = chrome.extension.getURL("pessoa.jade");
+    jQuery.get(jadeTemplateUrl, function(template) {
+        var html = renderJade(template, pessoa);
+        jQuery(container).append(html);
+    });
+    */
 };
 
 
 function renderMoustache(template, jsonData) {
 	return Mustache.render(template, jsonData);
 };
+
+
+function renderJade(template, jsonData) {
+    console.log(template);
+    var compiledTemplate = jade.compile(template, {});
+    return compiledTemplate(jsonData);
+};
+

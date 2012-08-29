@@ -1,17 +1,20 @@
-<div class="cartao" id="{{matrícula}}">
-    <img src="{{foto}}" onerror="this.setAttribute('src','http://www.my50.com/images/design/no-picture.png');">
-    <div class="informacao">
-        <div class="principal">{{nome}} - {{userid}}</div>
-        <div class="secundaria">{{lotação}} - {{função}} - {{cargo}}</div>
-        <div class="complementar">
-            <div class="telefone">{{ramais}}</div>
-            <div class="local">{{local/andar/sala}}</div>
-        </div>
-    </div>
-    <div class="qrcode1"></div>
-    <script type="text/javascript">
-        jQuery('#{{matrícula}} .qrcode').each( function(index,element) {
+.cartao(id=#{matrícula}')
+    img(src='#{foto}', onerror='this.setAttribute("src","http://www.my50.com/images/design/no-picture.png");)
+    .informacao
+        .principal #{nome} - #{userid}
+        .secundaria #{lotação}
+            br
+            if (typeof cargo !== "undefined")
+                #{cargo}
+            if (typeof funcao !== "undefined")
+                #{função}
+        .complementar
+            .telefone #{ramais}
+            if (typeof local !== "undefined")
+                .local #{local}
+
+    .qrcode1
+        - jQuery('#{{matrícula}} .qrcode').each( function(index,element) {
             jQuery(element).qrcode("{{nome}} {{lotação}} {{ramais}} {{local/andar/sala}}");
         });
-    </script>
-</div>
+

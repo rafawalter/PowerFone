@@ -25,6 +25,7 @@
             "./lib/jquery.qrcode.min.js",
 
 			"./lib/mustache.js",
+			"./lib/jade.min.js",
 
 			"powerfone.user.js",
 
@@ -37,6 +38,7 @@
 		"images/qrcode.png",
 		"images/no_pic.jpg",
 		"css/powerFone.less",
-		"pessoa.mustache"
+		"pessoa.mustache",
+		"pessoa.jade"
 	]
 }
