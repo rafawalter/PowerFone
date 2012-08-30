@@ -13,9 +13,8 @@
 
 // less.watch();
 
-var IMAGE_BASE_URL = chrome.extension.getURL("images");
-var powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
-const NO_PIC = IMAGE_BASE_URL + '/no_pic.png';
+const powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
+const NO_PIC = chrome.extension.getURL("images/no_pic.png");
 
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
@@ -91,6 +90,7 @@ function extrairPessoaDaPerfil(htmlDoPerfil) {
     var pessoa = extrairPessoaDaCelula(celulaInformacoes);
     pessoa.foto = extrairFotoDaCelula(celulaFoto);
 	pessoa.semFoto = fotoNaoEncontrada;
+    pessoa.iconeTelefone = chrome.extension.getURL('images/telefone.png');
     return pessoa;
 };
 
@@ -129,7 +129,6 @@ function renderPessoa(container, pessoa) {
 
 
 function renderJade(template, jsonData) {
-    console.log(template);
     var compiledTemplate = jade.compile(template, {});
     return compiledTemplate(jsonData);
 };
