@@ -102,7 +102,7 @@ function extrairFotoDaCelula(celula) {
 
 function extrairPessoaDaCelula(celula) {
     var campos = jQuery('font[color="#0000ff"]', celula).map(function(index,element){
-        return jQuery(element).text().toLowerCase();
+        return jQuery(element).text().toLowerCase().replace(/\//g, '_');
     });
 
     var valores = jQuery('b', celula).map(function(index,element){
@@ -120,24 +120,11 @@ function extrairPessoaDaCelula(celula) {
 
 
 function renderPessoa(container, pessoa) {
-    var moustacheTemplateUrl = chrome.extension.getURL("pessoa.mustache");
-    jQuery.get(moustacheTemplateUrl, function(template) {
-        var html = renderMoustache(template, pessoa);
-        jQuery(container).append(html);
-    });
-
-    /*
     var jadeTemplateUrl = chrome.extension.getURL("pessoa.jade");
     jQuery.get(jadeTemplateUrl, function(template) {
         var html = renderJade(template, pessoa);
         jQuery(container).append(html);
     });
-    */
-};
-
-
-function renderMoustache(template, jsonData) {
-	return Mustache.render(template, jsonData);
 };
 
 

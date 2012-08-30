@@ -1,20 +1,26 @@
 .cartao(id=#{matrícula}')
     img(src='#{foto}', onerror='this.setAttribute("src","http://www.my50.com/images/design/no-picture.png");)
     .informacao
-        .principal #{nome} - #{userid}
-        .secundaria #{lotação}
+        .principal
+            span #{nome}
+        .secundaria
+            span #{lotação}
             br
-            if (typeof cargo !== "undefined")
-                #{cargo}
-            if (typeof funcao !== "undefined")
-                #{função}
         .complementar
-            .telefone #{ramais}
-            if (typeof local !== "undefined")
-                .local #{local}
+            if typeof cargo !== 'undefined'
+                span #{cargo}
+            if typeof função !== 'undefined'
+                span #{função}
+            if typeof ramais !== 'undefined'
+                .telefone #{ramais}
+            if typeof local_andar_sala !== 'undefined'
+                .local #{local_andar_sala}
+            span #{userid} - #{matrícula}
 
-    .qrcode1
-        - jQuery('#{{matrícula}} .qrcode').each( function(index,element) {
-            jQuery(element).qrcode("{{nome}} {{lotação}} {{ramais}} {{local/andar/sala}}");
-        });
+            .qrcode
+
+            script(type="text/javascript")
+                jQuery('#' + '#{matrícula}' + '.qrcode').each( function(index,element) {
+                    jQuery(element).qrcode("#{nome} #{lotação} #{ramais} #{local_andar_sala}");
+                });
 
