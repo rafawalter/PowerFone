@@ -1,0 +1,7 @@
+Wish list
+
+- link no cartão para busca por lotação
+- qrcode
+- busca integrada na barra superior
+- integração com sametime
+- integração com email

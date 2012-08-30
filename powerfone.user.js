@@ -89,7 +89,7 @@ function extrairPessoaDaPerfil(htmlDoPerfil) {
     var celulaFoto = jQuery("td:nth-child(1)", celulas);
     var pessoa = extrairPessoaDaCelula(celulaInformacoes);
     pessoa.foto = extrairFotoDaCelula(celulaFoto);
-	pessoa.semFoto = fotoNaoEncontrada;
+	pessoa.semFoto = NO_PIC;
     pessoa.iconeTelefone = chrome.extension.getURL('images/telefone.png');
     return pessoa;
 };
