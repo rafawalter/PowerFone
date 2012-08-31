@@ -14,8 +14,9 @@
 // less.watch();
 
 const powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
-const NO_PIC = chrome.extension.getURL("images/no_pic.png");
+const NO_PIC = chrome.extension.getURL("images/no_picture.png");
 
+console.log('sem foto: ', NO_PIC);
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
@@ -63,6 +64,7 @@ jQuery('table table tr a[href]').each(function (index, element) {
     var url = $(element).attr('href');
     jQuery.get(url, function(data) {
 
+        /*
         jQuery(element).qtip({
             content: data,
             style: {
@@ -75,6 +77,7 @@ jQuery('table table tr a[href]').each(function (index, element) {
                 width: 570
             }
         });
+        */
 
         var novaPessoa = extrairPessoaDaPerfil(data);
         renderPessoa('#cartoes', novaPessoa);
