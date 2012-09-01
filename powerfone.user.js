@@ -15,8 +15,8 @@
 
 const powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 const NO_PIC = chrome.extension.getURL("images/no_picture.png");
-
-console.log('sem foto: ', NO_PIC);
+const PHONE_ICON = chrome.extension.getURL("images/telefone.png");
+const LOCAL_ICON = chrome.extension.getURL("images/local.png");
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
@@ -52,37 +52,19 @@ function mostrarApenasCartoesComTexto() {
 
 
 
-function fotoNaoEncontrada(element) {
-	alert('fNE powerfone.user.js');
-	jQuery(element).attr('src', NO_PIC);
-};
+var jadeTemplateUrl = chrome.extension.getURL("pessoa.jade");
+jQuery.get(jadeTemplateUrl, function(template) {
+    jQuery('table table tr a[href]').each(function (index, element) {
+        var url = jQuery(element).attr('href');
+        jQuery.get(url, function(data) {
+            var pessoa = extrairPessoaDaPerfil(data);
+            var html = renderJade(template, pessoa);
+            jQuery('#cartoes').append(html);
 
-
-
-jQuery('table table tr a[href]').each(function (index, element) {
-
-    var url = $(element).attr('href');
-    jQuery.get(url, function(data) {
-
-        /*
-        jQuery(element).qtip({
-            content: data,
-            style: {
-                tip: true,
-                border: {
-                    width: 0,
-                    radius: 4
-                },
-                name: 'light',
-                width: 570
-            }
+            jQuery('.telefone').css({ "background-image" : "url("+PHONE_ICON+")" });
+            jQuery('.local').css({ "background-image" : "url("+LOCAL_ICON+")" });
         });
-        */
-
-        var novaPessoa = extrairPessoaDaPerfil(data);
-        renderPessoa('#cartoes', novaPessoa);
     });
-
 });
 
 
@@ -121,14 +103,6 @@ function extrairPessoaDaCelula(celula) {
     return novaPessoa;
 };
 
-
-function renderPessoa(container, pessoa) {
-    var jadeTemplateUrl = chrome.extension.getURL("pessoa.jade");
-    jQuery.get(jadeTemplateUrl, function(template) {
-        var html = renderJade(template, pessoa);
-        jQuery(container).append(html);
-    });
-};
 
 
 function renderJade(template, jsonData) {

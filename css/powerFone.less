@@ -1,5 +1,4 @@
-@telefone-url: `chrome.extension.getURL("images/telefone.png")`;
-// @local-url: "@{image-base-url}/local.png";
+//@telefone-url: url("`chrome.extension.getURL('images/telefone.png')`");
 @max-image-height: 100px;
 
 
@@ -65,13 +64,13 @@ table {
 			
 			.telefone {
 				padding-left: 20px;
-				background-image: url("`NO_PIC`");
+				//background-image: @telefone-url;
 				background-repeat: no-repeat;
 			}
 			
 			.local {
 				padding-left: 20px;
-				//background-image: url(@local-url);
+				//background-image: @local-url;
 				background-repeat: no-repeat;
 			}
 		}
