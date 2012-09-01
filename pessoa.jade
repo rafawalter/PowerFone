@@ -17,10 +17,12 @@
                 .local #{local_andar_sala}
             span #{userid} - #{matrícula}
 
-            .qrcode
+    .botoes
+        button.qrcode(type='button', onclick='alert("Aguarde e confie...");')
+            img
 
-            script(type="text/javascript")
-                jQuery('#' + '#{matrícula}' + '.qrcode').each( function(index,element) {
-                    jQuery(element).qrcode("#{nome} #{lotação} #{ramais} #{local_andar_sala}");
-                });
+    script(type="text/javascript")
+        jQuery('#' + '#{matrícula}' + '.qrcode').each( function(index,element) {
+            jQuery(element).qrcode("#{nome} #{lotação} #{ramais} #{local_andar_sala}");
+        });
 

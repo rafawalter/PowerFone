@@ -17,6 +17,7 @@ const powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 const NO_PIC = chrome.extension.getURL("images/no_picture.png");
 const PHONE_ICON = chrome.extension.getURL("images/telefone.png");
 const LOCAL_ICON = chrome.extension.getURL("images/local.png");
+const QRCODE_ICON = chrome.extension.getURL("images/qrcode.png");
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
 
@@ -63,6 +64,7 @@ jQuery.get(jadeTemplateUrl, function(template) {
 
             jQuery('.telefone').css({ "background-image" : "url("+PHONE_ICON+")" });
             jQuery('.local').css({ "background-image" : "url("+LOCAL_ICON+")" });
+            jQuery('button.qrcode img').attr("src", QRCODE_ICON );
         });
     });
 });
