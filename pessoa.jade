@@ -5,17 +5,18 @@
             span #{nome}
         .secundaria
             span #{lotação}
-            br
+            if typeof função !== 'undefined'
+                span  - #{função}
         .complementar
             if typeof cargo !== 'undefined'
-                span #{cargo}
-            if typeof função !== 'undefined'
-                span #{função}
+                span #{cargo} - 
+            span #{userid} - #{matrícula}
+
             if typeof ramais !== 'undefined'
                 .telefone #{ramais}
             if typeof local_andar_sala !== 'undefined'
                 .local #{local_andar_sala}
-            span #{userid} - #{matrícula}
+
 
     .botoes
         button.qrcode(type='button', onclick='alert("Aguarde e confie...");')
