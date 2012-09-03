@@ -37,6 +37,7 @@
 		"images/local.png",
 		"images/local.jpg",
 		"images/qrcode.png",
+		"images/fake_qrcode.png",
 		"images/no_picture.png",
 		"css/powerFone.less",
 		"pessoa.mustache",
