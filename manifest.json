@@ -35,6 +35,7 @@
 	"web_accessible_resources": [
 		"images/telefone.png",
 		"images/local.png",
+		"images/local.jpg",
 		"images/qrcode.png",
 		"images/no_picture.png",
 		"css/powerFone.less",

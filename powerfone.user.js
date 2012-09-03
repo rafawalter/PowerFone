@@ -16,7 +16,7 @@
 const powerFoneLessUrl = chrome.extension.getURL("css/powerFone.less");
 const NO_PIC = chrome.extension.getURL("images/no_picture.png");
 const PHONE_ICON = chrome.extension.getURL("images/telefone.png");
-const LOCAL_ICON = chrome.extension.getURL("images/local.png");
+const LOCAL_ICON = chrome.extension.getURL("images/local.jpg");
 const QRCODE_ICON = chrome.extension.getURL("images/qrcode.png");
 
 jQuery('head').append('<link rel="stylesheet/less" type="text/css" href="'+powerFoneLessUrl+'">');
