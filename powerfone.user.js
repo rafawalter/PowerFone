@@ -59,7 +59,7 @@ jQuery.get(jadeTemplateUrl, function(template) {
     jQuery('table table tr a[href]').each(function (index, element) {
         var url = jQuery(element).attr('href');
         jQuery.get(url, function(data) {
-            var pessoa = extrairPessoaDaPerfil(data);
+            var pessoa = extrairPessoaDoPerfil(data);
             var html = renderJade(template, pessoa);
             jQuery('#cartoes').append(html);
 
@@ -83,7 +83,7 @@ jQuery.get(jadeTemplateUrl, function(template) {
 });
 
 
-function extrairPessoaDaPerfil(htmlDoPerfil) {
+function extrairPessoaDoPerfil(htmlDoPerfil) {
     var celulas = jQuery(htmlDoPerfil, "form[name='_Pessoa'] > table > tbody > tr:nth-child(3)");
     var celulaInformacoes = jQuery("td:nth-child(2)", celulas);
     var celulaFoto = jQuery("td:nth-child(1)", celulas);
